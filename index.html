@@ -1,0 +1,71 @@
+<!--
+
+    Modelo matemático de scoring:
+    score = (energia + humor + motivação + sono) - irritação
+        
+    Pior score possivel: -5
+    Melhor score possivel: 15 (range de 20 numeros ~ -5 a 15)
+
+-->
+
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style.css">
+        <title>Controle Emocional</title>
+    </head>
+    <body>
+        <div id="monitor">
+            <div id="chart">
+                <div id="chart-fallback">
+                    <div id="load-animation"></div>
+                </div>
+            </div>
+            <div id="entries">
+                <div id="inputs">
+                    <label>
+                        Energia: <input type="number" id="energy" value="0" min="0" max="10"/>
+                    </label>
+                    <label>
+                        Humor: <input type="number" id="humor" value="0" min="0" max="10"/>
+                    </label>
+                    <label>
+                        Motivação: <input type="number" id="motivation" value="0" min="0" max="10"/>
+                    </label>
+                    <label>
+                        Sono: <input type="number" id="sleep" value="0" min="0" max="10"/>
+                    </label>
+                    <label>
+                        Irritação: <input type="number" id="stress" value="0" min="0" max="10"/>
+                    </label>        
+                </div>
+                <div id="buttons">
+                    <button id="send"> Enviar </button>
+                    <button id="restart"> Refazer tudo </button>
+                </div>
+                <div id="marking-status" class="daily-status">
+                    Está na hora de fazer seu registro!
+                </div>
+                <div>
+                    <h2>Avaliação</h2>
+                    <div id="evaluation-data">
+                        Sem dados suficientes
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+    <script src="javascript/utils.js"></script>
+    <script src="javascript/globals.js"></script>
+    <script src="javascript/tools.js"></script>
+    <script src="javascript/chart.js"></script>
+    <script src="javascript/status.js"></script>
+    <script src="javascript/validation.js"></script>
+    <script src="javascript/memory.js"></script>
+    <script src="javascript/protocols.js"></script>
+    <script src="javascript/eventHandlers.js"></script>
+    <script src="javascript/arrive.js"></script>
+</html>
