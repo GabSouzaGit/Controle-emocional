@@ -2,51 +2,46 @@ const chartSchema = {
     chart: {
         type: 'line'
     },
+    fill: {
+        type: "solid"
+    },
+    colors: ['#000'],
     stroke: {
         curve: 'smooth',
     },
-    fill: {
-        type: 'gradient',
-        gradient: {
-            shade: 'dark',
-            shadeIntensity: 1,
-            type: 'vertical',
-            opacityFrom: 1,
-            opacityTo: 1,
-            stops: [0, 100],
-            colorStops: [
-                {
-                    offset: 5,
-                    color: "hsl(25, 100%, 50%)",
-                    opacity: 1
-                },
-                {
-                    offset: 20,
-                    color: "hsl(0, 80%, 50%)",
-                    opacity: 1
-                },
-                {
-                    offset: 40,
-                    color: "hsl(0, 0%, 80%)",
-                    opacity: 1
-                },
-                {
-                    offset: 80,
-                    color: "hsl(0, 0%, 80%)",
-                    opacity: 1
-                },
-                {
-                    offset: 90,
-                    color: "hsl(240, 30%, 50%)",
-                    opacity: 1
-                },
-                {
-                    offset: 100,
-                    color: "hsl(240, 30%, 30%)",
-                    opacity: 1
-                }
-            ]
-        }
+    annotations: {
+        yaxis: [
+            {
+                y: 40,
+                y2: 25,
+                fillColor: 'hsl(10, 100%, 70%)',
+                label: { text: 'Fase de auge' }
+            },
+            {
+                y: 25,
+                y2: 20,
+                fillColor: 'hsl(10, 100%, 80%)',
+                //label: { text: 'Zona Crítica' }
+            },
+            {
+                y: 20,
+                y2: 10,
+                fillColor: '#fff',
+                label: { text: 'Estável' }
+            },
+            {
+                y: 10,
+                y2: 5,
+                fillColor: 'hsl(200, 60%, 50%)',
+                //label: { text: 'Zona Crítica' }
+            },
+            {
+                y: 5,
+                y2: -10,
+                fillColor: 'hsl(210, 30%, 50%)',
+                label: { text: 'Fase Baixa' }
+            }
+        ]
     },
     series: [{
         name: 'Score',
@@ -61,6 +56,7 @@ const chartSchema = {
         tickAmount: 10
     }
 }
+
 
 function putChartInLoading(){
     const fallback = document.createElement("div");
