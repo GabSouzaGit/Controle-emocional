@@ -4,7 +4,7 @@ const statusMessages = {
     "urgent-status": "Marque agora."
 }
 
-function updateStatus(status, hoursUrgent = 0){
+function updateStatus(status, hoursDiff = 0){
     markingStatus.className = status;
-    markingStatus.textContent = hoursUrgent > 0 ? `${statusMessages[status]} Está cerca de ${hoursUrgent} horas atrasado. Atrasos podem prejudicar sua analise no futuro.` : statusMessages[status];
+    markingStatus.textContent = status == URGENT_MARKING_STATUS ? `${statusMessages[status]} Está cerca de ${hoursDiff} horas atrasado. Atrasos podem prejudicar sua analise no futuro.` : `${statusMessages[status]} (marcado a ${hoursDiff} horas).`;
 }

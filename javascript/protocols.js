@@ -66,12 +66,12 @@ function entryProtocol(){
     const hoursDiff = timestampDiff();
 
     if(hoursDiff < 24){
-        updateStatus(OK_MARKING_STATUS);
+        updateStatus(OK_MARKING_STATUS, hoursDiff);
         return;
     }
     if(hoursDiff >= 24
     && hoursDiff <= 24.9){
-        updateStatus(DAILY_MARKING_STATUS);
+        updateStatus(DAILY_MARKING_STATUS, hoursDiff);
         return;
     }
     
