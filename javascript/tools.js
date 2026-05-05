@@ -21,7 +21,7 @@ function getScoreState(){
     if(score < 5)                   return "LOW_PHASE";
     if(score >= 5 && score < 10)    return "LOW_PHASE_CLOSEST";
     if(score > 20 && score <= 25)   return "HIGH_PHASE_CLOSEST";
-    if(score > 25)                  return "HIGH_FASE";
+    if(score > 25)                  return "HIGH_PHASE";
 
                                     return "NEUTRAL_PHASE";
 }
