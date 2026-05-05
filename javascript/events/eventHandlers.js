@@ -41,11 +41,7 @@ restartButton.addEventListener('click', () => {
 
 clearAllButton.addEventListener('click', clearAllMemory);
 
-exportButton.addEventListener('click', () => {
+exportButton.addEventListener('click', exportData);
 
-});
-
-importButton.addEventListener('click', () => {
-
-});
+importButton.addEventListener('click', importData);
 

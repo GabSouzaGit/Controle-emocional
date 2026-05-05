@@ -1,3 +1,5 @@
+const EXPORT_CERTIFICATION = "EMT_CONTROL_CERTIFICATION";
+
 const chartContainer = document.querySelector("#chart");
 const markingStatus = document.querySelector("#marking-status");
 const evaluationData = document.querySelector("#evaluation-data");

@@ -17,9 +17,7 @@ function putChartInLoading(){
 
 function updateChart(){
     chartContainer.innerHTML = "";
-
     const options = { ...chartSchema };
-    console.log(options)
     
     options.series[0] = {}
     options.series[0].data = scores.map(doc => { return { y: doc.points, x: new Date(doc.timestamp).getTime() } });
