@@ -37,5 +37,15 @@ restartButton.addEventListener('click', () => {
     for(let i = 0; i < ipts.length; i++){
         ipts[i].value = 0;
     }
-})
+});
+
+clearAllButton.addEventListener('click', clearAllMemory);
+
+exportButton.addEventListener('click', () => {
+
+});
+
+importButton.addEventListener('click', () => {
+
+});
 

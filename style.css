@@ -19,6 +19,14 @@ body {
     box-sizing: border-box;
 }
 
+header {
+    padding: 12px;
+    margin: 12px;
+    display: flex;  
+    justify-content: end;
+    align-items: center;
+}
+
 #monitor {
     display: flex;
     justify-content: space-around;
@@ -83,11 +91,11 @@ body {
     padding: 8px;
 }
 
-#monitor #buttons {
+.button-container {
     display: flex;
 }
 
-#monitor #buttons button {
+.button-container button {
     padding: 10px 12px;
     margin: 8px 8px 0 0;
     cursor: pointer;

@@ -4,10 +4,24 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+        <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+        <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
         <link rel="stylesheet" href="style.css">
         <title>Controle Emocional</title>
     </head>
     <body>
+        <header>
+            <div class="button-container">
+                <button id="export"> 
+                    <ion-icon name="download-outline"></ion-icon> 
+                    Exportar dados 
+                </button>
+                <button id="import"> 
+                    <ion-icon name="swap-horizontal-outline"></ion-icon>
+                    Importar dados 
+                </button>
+            </div>
+        </header>
         <div id="monitor">
             <div id="chart">
                 <div id="chart-fallback">
@@ -32,9 +46,10 @@
                         Irritação: <input type="number" id="stress" value="0" min="0" max="10"/>
                     </label>        
                 </div>
-                <div id="buttons">
+                <div class="button-container">
                     <button id="send"> Enviar </button>
-                    <button id="restart"> Refazer tudo </button>
+                    <button id="restart"> Limpar campos </button>
+                    <button id="clear-all"> Eliminar todos os dados </button>
                 </div>
                 <div id="marking-status" class="daily-status">
                     Está na hora de fazer seu registro!

@@ -4,6 +4,9 @@ const evaluationData = document.querySelector("#evaluation-data");
 
 const sendButton = document.querySelector("#send");
 const restartButton = document.querySelector("#restart");
+const clearAllButton = document.querySelector("#clear-all");
+const exportButton = document.querySelector("#export");
+const importButton = document.querySelector("#import");
 
 const OK_MARKING_STATUS = "ok-status";
 const DAILY_MARKING_STATUS = "daily-status";
@@ -55,3 +58,58 @@ const PHASES = {
 
 let scores = [];
 let timeOfLastMark = 0;
+
+const chartSchema = {
+    chart: {
+        type: 'line'
+    },
+    fill: {
+        type: "solid"
+    },
+    colors: ['#000'],
+    stroke: {
+        curve: 'smooth',
+    },
+    annotations: {
+        yaxis: [
+            {
+                y: 40,
+                y2: 25,
+                fillColor: 'hsl(10, 100%, 70%)',
+            },
+            {
+                y: 25,
+                y2: 20,
+                fillColor: 'hsl(10, 100%, 80%)',
+            },
+            {
+                y: 20,
+                y2: 10,
+                fillColor: '#fff',
+                label: { text: "Estável" }
+            },
+            {
+                y: 10,
+                y2: 5,
+                fillColor: 'hsl(200, 60%, 50%)',
+            },
+            {
+                y: 5,
+                y2: -10,
+                fillColor: 'hsl(210, 30%, 50%)',
+            }
+        ]
+    },
+    series: [{
+        name: 'Score',
+        data: []
+    }],
+    xaxis: {
+        type: "datetime"
+    },
+    yaxis: {
+        max: MAX_TOTAL_SCORE,
+        min: MIN_TOTAL_SCORE,
+        tickAmount: 10
+    }
+}

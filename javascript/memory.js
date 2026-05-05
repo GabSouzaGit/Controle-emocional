@@ -19,3 +19,12 @@ function mark(energy, humor, motivation, sleep, stress){
         timeOfLastMark.toString()
     );
 }
+
+function clearAllMemory(){
+    if(confirm("Tem certeza que deseja eliminar todos os dados?")){ 
+        localStorage.clear();
+        initChart();
+        scores = [];
+        timeOfLastMark = 0;     
+    }
+}

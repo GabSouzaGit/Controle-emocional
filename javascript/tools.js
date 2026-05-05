@@ -54,4 +54,38 @@ function getTrendWithIntensity(invertedPositionIndex = 0){
     return trendObject
 } 
 
+function emotionStateDeterminator(phase, trend){
+    if(trend == "ASC"){
+        return PHASES[phase].asc;
+    }
+    if(trend == "DSC"){
+        return PHASES[phase].dsc;
+    }
+    
+    return PHASES[phase].n;
+}
+
+function scoreAnalylis(){
+    if(scores.length < 2){
+        return;
+    }
+    
+    const { trend, intensity } = getTrendWithIntensity();
+    const state = getScoreState();
+
+    evaluationData.innerHTML = ""; 
+
+    const currentState = document.createElement("div");
+    const floatingAnalysis = document.createElement("div");
+    const emotionalState = document.createElement("div");
+
+    currentState.innerHTML     = `Estado atual: <b>${PHASES[state].phase}</b>`;
+    floatingAnalysis.innerHTML = `Analise de flutuação: <b>${floatingEvalutation(trend)(intensity)}</b>`;
+    emotionalState.innerHTML   = `Direcionamento: <b>${emotionStateDeterminator(state, trend)}</b>`;
+
+    evaluationData.appendChild(currentState);
+    evaluationData.appendChild(floatingAnalysis);
+    evaluationData.appendChild(emotionalState);
+}
+
 // Devo olhar direção (subindo/descendo), intensidade(estável/fraco/forte) e área(normal/baixa/auge).
