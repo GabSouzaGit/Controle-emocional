@@ -2,21 +2,12 @@ const versionTree = [
     [
         "Gráfico, 5 campos parametrizaveis, envio e reset de campos, e avaliação de dados do gráfico (tendência).",
         [
-            [
-                "Nova interface de gráfico, divida em áreas (auge, +/-, estável, +/-, baixa)",
-                []
-            ],
+            [ "Nova interface de gráfico, divida em áreas (auge, +/-, estável, +/-, baixa)", []],
             [
                 "Exibição de diferença de horas",
                 [
-                    [
-                        "Correção de bugs",
-                        []
-                    ],
-                    [
-                        "Correção de bugs",
-                        []
-                    ]
+                    ["Correção de bugs", []],
+                    ["Correção de bugs", []]
                 ]
             ],
             [
@@ -33,7 +24,9 @@ const versionTree = [
             ],
             [
                 "Log de versões do sistema (esta tela ^_-)",
-                []
+                [
+                    ["Melhoria de usabilidade da importação (recebimento de arquivo .emtc)", []]
+                ]
             ]
         ],
     ]

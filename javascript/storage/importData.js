@@ -44,6 +44,7 @@ function readFile(file){
 function importData(){
     const fileReceiver = document.createElement("input");
     fileReceiver.type = "file";
+    fileReceiver.accept = ".emtc";
 
     fileReceiver.addEventListener('input', async () => {
         const file = fileReceiver.files[0];
