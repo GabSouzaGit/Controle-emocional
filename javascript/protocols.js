@@ -70,7 +70,7 @@ function entryProtocol(){
         return;
     }
     if(hoursDiff >= 24
-    && hoursDiff <= 24.9){
+    && hoursDiff <= 48){
         updateStatus(DAILY_MARKING_STATUS, hoursDiff);
         return;
     }
