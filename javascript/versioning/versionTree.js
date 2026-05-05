@@ -30,6 +30,10 @@ const versionTree = [
                 [
                     ["Melhoria de manutenção", []]
                 ]
+            ],
+            [
+                "Log de versões do sistema (esta tela ^_-)",
+                []
             ]
         ],
     ]

@@ -1,4 +1,20 @@
-#versions * {
+* {
     font-family: 'Courier New', Courier, monospace;
+}
+
+li {
     margin: 10px 0;
 }
+
+#versions {
+    font-size: 12px;
+}
+
+/*
+ul > li::marker {
+    color: hsl(120, 100%, 50%);
+}
+
+ul ul > li::marker {
+    color: hsl(200, 100%, 50%);
+}*/
