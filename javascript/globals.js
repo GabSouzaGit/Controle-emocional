@@ -1,4 +1,4 @@
-const PROGRAM_VERSION = "1.4.0";
+const PROGRAM_VERSION = "1.5.2";
 const EXPORT_CERTIFICATION = "EMT_CONTROL_CERTIFICATION";
 
 const chartContainer = document.querySelector("#chart");

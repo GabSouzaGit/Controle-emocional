@@ -25,7 +25,8 @@ const versionTree = [
             [
                 "Log de versões do sistema (esta tela ^_-)",
                 [
-                    ["Melhoria de usabilidade da importação (recebimento de arquivo .emtc)", []]
+                    ["Melhoria de usabilidade da importação (recebimento de arquivo .emtc)", []],
+                    ["Correção de bugs", []]
                 ]
             ]
         ],
