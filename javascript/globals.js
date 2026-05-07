@@ -1,5 +1,14 @@
-const PROGRAM_VERSION = "1.5.2";
-const EXPORT_CERTIFICATION = "EMT_CONTROL_CERTIFICATION";
+const PROGRAM_VERSION = "1.5.3";
+const EXPORT_FLAG = "EMT_CONTROL_CERTIFICATION";
+
+const EXPORT_CERTIFICATION = {
+    flag: EXPORT_FLAG,
+    version: PROGRAM_VERSION,
+    createdAt: null
+};
+
+const EMTSCORE_STORAGE_KEY = "EMT_CONTROL_MARKINGS";
+const EMTSTAMP_STORAGE_KEY = "EMT_CONTROL_LAST_TIMESTAMP";
 
 const chartContainer = document.querySelector("#chart");
 const markingStatus = document.querySelector("#marking-status");

@@ -4,7 +4,7 @@
  */
 function getExtension(filename){
     const splitted = filename.split(".");
-    return splitted[splitted.length - 1]
+    return splitted[splitted.length - 1];
 }
 
 /**
@@ -13,14 +13,15 @@ function getExtension(filename){
  */
 function emtcFileCertified(content){
     const splitted = content.split("***");
-    const [certification, data] = splitted;
+    const [certificationInText, data] = splitted;
 
-    console.log(certification);
-    
-
-    if(certification == EXPORT_CERTIFICATION){
+    const certification = JSON.parse(certificationInText)
+    if(certification.flag == EXPORT_FLAG
+    && certification.version 
+    && certification.createdAt){
         return {
             status: "authenticated",
+            from: certification.createdAt,
             data: JSON.parse(data)
         }
     }
@@ -31,6 +32,25 @@ function emtcFileCertified(content){
     }
 }
 
+function verifyBackupData(data){
+    const isArray = Array.isArray(data);
+
+    if(isArray){
+        const allDataFormatted = data.every((item) => {
+            return Object.hasOwn(item, "points")
+                && Object.hasOwn(item, "timestamp")
+                && typeof item.points == "number"
+                && typeof item.timestamp == "number"
+        });
+
+        if(data.length == 0) return 0; // Sem dados.
+        if(allDataFormatted) return -1; // Tudo correto.
+
+        return 1; // Dados fora de formato.
+    }
+
+    return 2; // Dados não são array.
+}
 
 function readFile(file){
     return new Promise((resolve, reject) => {
@@ -42,23 +62,38 @@ function readFile(file){
 };
 
 function importData(){
+    const dataVerificationError = [
+        "O arquivo não contém dados de backup.",
+        "O documento está fora do formato de dados ou corrompido.",
+        "Documento fora de formato."
+    ];
+
     const fileReceiver = document.createElement("input");
     fileReceiver.type = "file";
     fileReceiver.accept = ".emtc";
 
     fileReceiver.addEventListener('input', async () => {
         const file = fileReceiver.files[0];
+
+        console.log(file.name)
         
         if(getExtension(file.name) == "emtc"){
             try {
                 const asyncEmtcRead = await readFile(file);
                 const emtcObject = emtcFileCertified(asyncEmtcRead);
-                
+
                 if(emtcObject.status == "authenticated"){
-                    alert("Importação concluida com sucesso!");
+                    const dataStatus = verifyBackupData(emtcObject.data);
                     
+                    if(dataStatus != -1){
+                        alert(dataVerificationError[dataStatus]);
+                        return;
+                    }
+
                     scores = emtcObject.data;
                     recoveryFromBackup();
+                    
+                    alert(`Importação concluida com sucesso! Registro recuperado de ${new Date(emtcObject.from).toLocaleDateString()}.`);
                     
                     window.location.reload();
                     return;
@@ -68,8 +103,13 @@ function importData(){
                 return;
 
             }catch(error){
-                console.log(error)
-                alert("Ocorreu um erro ao ler o arquivo.");
+                if(error instanceof SyntaxError){
+                    alert("Arquivo provavelmente corrompido, quebrado ou fora de sintaxe. Tente outro ou modifique manualmente.");
+                    return;
+                }
+
+                alert("Ocorreu um erro desconhecido. Tente outro arquivo ou tente mais tarde.");
+                return;
             }
         }
 

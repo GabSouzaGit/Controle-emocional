@@ -1,3 +1,10 @@
+const defaultPatchMessages = [
+    "Correção de bugs",
+    "Melhoria de manutenção"
+]
+
+const patch = (i) => defaultPatchMessages[i];
+
 const versionTree = [
     [
         "Gráfico, 5 campos parametrizaveis, envio e reset de campos, e avaliação de dados do gráfico (tendência).",
@@ -6,27 +13,28 @@ const versionTree = [
             [
                 "Exibição de diferença de horas",
                 [
-                    ["Correção de bugs", []],
-                    ["Correção de bugs", []]
+                    [patch(0), []],
+                    [patch(0), []]
                 ]
             ],
             [
                 "Limpeza de todos os dados do localStorage por botão",
                 [
-                    ["Melhoria de manutenção", []]
+                    [patch(1), []]
                 ]
             ],
             [
                 "Importação e exportação registros por arquivo .emtc",
                 [
-                    ["Melhoria de manutenção", []]
+                    [patch(1), []]
                 ]
             ],
             [
                 "Log de versões do sistema (esta tela ^_-)",
                 [
                     ["Melhoria de usabilidade da importação (recebimento de arquivo .emtc)", []],
-                    ["Correção de bugs", []]
+                    [patch(0), []],
+                    ["Mais camadas de verificação na importação e exportação", []]
                 ]
             ]
         ],
