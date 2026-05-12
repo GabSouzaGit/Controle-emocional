@@ -40,8 +40,10 @@ restartButton.addEventListener('click', () => {
 });
 
 clearAllButton.addEventListener('click', clearAllMemory);
-
 exportButton.addEventListener('click', exportData);
-
 importButton.addEventListener('click', importData);
+
+aiRelatoryButton.addEventListener('click', tryGetRelatory);
+relatoryWindowCloseButton.addEventListener('click', closeRelatoryWindow);
+relatoryWindowOpenButton.addEventListener('click', openRelatoryWindow);
 

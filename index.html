@@ -8,25 +8,54 @@
         <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
         <link rel="stylesheet" href="styles/default.css">
         <link rel="stylesheet" href="styles/index.css">
+        <link rel="stylesheet" href="styles/relatory.css">
         <title>Controle Emocional</title>
     </head>
     <body>
+        <div id="ai-relatory">
+            <header>
+                <button id="relatory-window-close-button"> Fechar </button>
+            </header>
+            <main>
+                Nenhum relatório gerado.
+            </main>
+        </div>
         <header>
-            <div id="header-end-board">
-                <div>
-                    <a href="versions.html">
-                        Versões
-                    </a>
+            <div id="additional-content">
+                <a href="versions.html">
+                    Versões
+                </a>
+            </div>
+            <div id="header-boards">
+                <div id="header-start-board">
+                    <button id="ai-relatory-dispatcher" style="margin-right: 8px;"> 
+                        <ion-icon name="sparkles"></ion-icon>
+                        <div>
+                            Gerar Relatório 
+                        </div>
+                    </button>
+                    <button id="relatory-window-open-button"> 
+                        <ion-icon name="return-down-forward"></ion-icon>
+                        <div>
+                            Abrir relatorio
+                        </div>
+                    </button>
                 </div>
-                <div class="button-container">
-                    <button id="export"> 
-                        <ion-icon name="download-outline"></ion-icon> 
-                        Exportar dados 
-                    </button>
-                    <button id="import"> 
-                        <ion-icon name="swap-horizontal-outline"></ion-icon>
-                        Importar dados 
-                    </button>
+                <div id="header-end-board">
+                    <div class="button-container">
+                        <button id="export"> 
+                            <ion-icon name="download-outline"></ion-icon> 
+                            <div>
+                                Exportar dados 
+                            </div>
+                        </button>
+                        <button id="import"> 
+                            <ion-icon name="swap-horizontal-outline"></ion-icon>
+                            <div>
+                                Importar dados 
+                            </div>
+                        </button>
+                    </div>
                 </div>
             </div>
         </header>
@@ -79,11 +108,11 @@
 
     <script src="javascript/dom/chart.js"></script>
     <script src="javascript/dom/status.js"></script>
+    <script src="javascript/dom/relatory.js"></script>
 
     <script src="javascript/storage/memory.js"></script>
     <script src="javascript/storage/importData.js"></script>
     <script src="javascript/storage/exportData.js"></script>
-
 
     <script src="javascript/protocols.js"></script>
 

@@ -1,4 +1,7 @@
-const PROGRAM_VERSION = "1.5.3";
+const RELATORY_OPEN = "relatory-open"
+const RELATORY_CLOSED = "relatory-closed"
+
+const PROGRAM_VERSION = "1.6__SNAPSHOT";
 const EXPORT_FLAG = "EMT_CONTROL_CERTIFICATION";
 
 const EXPORT_CERTIFICATION = {
@@ -13,12 +16,18 @@ const EMTSTAMP_STORAGE_KEY = "EMT_CONTROL_LAST_TIMESTAMP";
 const chartContainer = document.querySelector("#chart");
 const markingStatus = document.querySelector("#marking-status");
 const evaluationData = document.querySelector("#evaluation-data");
+const relatoryWindow = document.querySelector("#ai-relatory");
+const relatoryWindowContent = document.querySelector("#ai-relatory main");
 
+// Botões da página
 const sendButton = document.querySelector("#send");
 const restartButton = document.querySelector("#restart");
 const clearAllButton = document.querySelector("#clear-all");
 const exportButton = document.querySelector("#export");
 const importButton = document.querySelector("#import");
+const aiRelatoryButton = document.querySelector("#ai-relatory-dispatcher");
+const relatoryWindowCloseButton = document.querySelector("#relatory-window-close-button");
+const relatoryWindowOpenButton = document.querySelector("#relatory-window-open-button");
 
 const OK_MARKING_STATUS = "ok-status";
 const DAILY_MARKING_STATUS = "daily-status";

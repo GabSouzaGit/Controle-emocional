@@ -2,13 +2,31 @@ body {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    position: relative;
 }
 
 header {
     padding: 12px;
-    margin: 12px;
+    margin: 0 12px 12px 12px;
     display: flex;  
-    justify-content: end;
+    flex-direction: column;
+    justify-content: center;
+    align-items: end;
+}
+
+header #additional-content {
+    margin-right: 8px;
+}
+
+#header-boards {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+#header-start-board {
+    display: flex;
     align-items: center;
 }
 
@@ -16,10 +34,6 @@ header {
     display: flex;
     flex-direction: column;
     align-items: end;
-}
-
-#header-end-board a {
-    margin-right: 8px;
 }
 
 #monitor {
@@ -86,14 +100,25 @@ header {
     padding: 8px;
 }
 
+button {
+    padding: 10px 12px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+button ion-icon {
+    color: gray;
+    margin-right: 5px;
+}
+
 .button-container {
     display: flex;
+    padding: 8px 0 8px 0;
 }
 
 .button-container button {
-    padding: 10px 12px;
-    margin: 8px 8px 0 0;
-    cursor: pointer;
+    margin-right: 8px;
 }
 
 #monitor #marking-status {
@@ -122,6 +147,10 @@ header {
     #monitor {
         flex-direction: column;
         align-items: center;
+    }
+
+    #ai-relatory {
+        width: 100%;
     }
 }
 

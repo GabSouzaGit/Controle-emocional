@@ -34,9 +34,10 @@ const versionTree = [
                 [
                     ["Melhoria de usabilidade da importação (recebimento de arquivo .emtc)", []],
                     [patch(0), []],
-                    ["Mais camadas de verificação na importação e exportação", []]
+                    ["Mais camadas de verificação na importação e exportação", []],
                 ]
-            ]
+            ],
+            ["Interface de geração de relatório com IA <b>(em desenvolvimento)</b>", []]
         ],
     ]
 ]
