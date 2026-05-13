@@ -1,7 +1,7 @@
-const RELATORY_OPEN = "relatory-open"
-const RELATORY_CLOSED = "relatory-closed"
+const REPORT_WINDOW_OPEN = "report-open"
+const REPORT_WINDOW_CLOSED = "report-closed"
 
-const PROGRAM_VERSION = "1.6__SNAPSHOT";
+const PROGRAM_VERSION = "1.6";
 const EXPORT_FLAG = "EMT_CONTROL_CERTIFICATION";
 
 const EXPORT_CERTIFICATION = {
@@ -16,8 +16,8 @@ const EMTSTAMP_STORAGE_KEY = "EMT_CONTROL_LAST_TIMESTAMP";
 const chartContainer = document.querySelector("#chart");
 const markingStatus = document.querySelector("#marking-status");
 const evaluationData = document.querySelector("#evaluation-data");
-const relatoryWindow = document.querySelector("#ai-relatory");
-const relatoryWindowContent = document.querySelector("#ai-relatory main");
+const reportWindow = document.querySelector("#ai-report");
+const reportWindowContent = document.querySelector("#ai-report main");
 
 // Botões da página
 const sendButton = document.querySelector("#send");
@@ -25,9 +25,9 @@ const restartButton = document.querySelector("#restart");
 const clearAllButton = document.querySelector("#clear-all");
 const exportButton = document.querySelector("#export");
 const importButton = document.querySelector("#import");
-const aiRelatoryButton = document.querySelector("#ai-relatory-dispatcher");
-const relatoryWindowCloseButton = document.querySelector("#relatory-window-close-button");
-const relatoryWindowOpenButton = document.querySelector("#relatory-window-open-button");
+const aiReportButton = document.querySelector("#ai-report-dispatcher");
+const reportWindowCloseButton = document.querySelector("#report-window-close-button");
+const reportWindowOpenButton = document.querySelector("#report-window-open-button");
 
 const OK_MARKING_STATUS = "ok-status";
 const DAILY_MARKING_STATUS = "daily-status";

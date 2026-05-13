@@ -12,3 +12,13 @@
         'Helvetica Neue', 
         sans-serif;
 }
+
+@keyframes rotate {
+    to {
+        transform: rotate(0deg);
+    }
+
+    from {
+        transform: rotate(360deg);
+    }
+}

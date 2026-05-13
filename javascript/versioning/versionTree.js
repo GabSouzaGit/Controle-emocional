@@ -37,7 +37,7 @@ const versionTree = [
                     ["Mais camadas de verificação na importação e exportação", []],
                 ]
             ],
-            ["Interface de geração de relatório com IA <b>(em desenvolvimento)</b>", []]
+            ["Geração de relatório com IA", []]
         ],
     ]
 ]

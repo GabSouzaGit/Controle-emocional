@@ -1,0 +1,71 @@
+#ai-report {
+    position: absolute;
+    height: 100vh;
+    width: 0;
+    background: #fff;
+    border-left: 1px solid #acacac;
+    z-index: 12;
+    margin: 0;
+    right: 0;
+    transition: 0.5s all;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    display: flex;
+    flex-direction: column;
+}
+
+.report-open {
+    width: 35vw !important;
+}
+
+.report-closed {
+    width: 0 !important;
+}
+
+#ai-report #report-header {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    padding: 12px;
+    flex-grow: 0.5;
+}
+
+#ai-report main {
+    padding: 8px 12px;
+    text-align: start;
+    flex-grow: 15;
+}
+
+#ai-report main #error-report-message {
+    color: red;
+}
+
+#loading-container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+#loading-container #legend {
+    margin-top: 10px;
+    color: hsl(0, 0%, 30%);
+}
+
+#report-loading {
+    height: 30px;
+    width: 30px;
+    border: 5px solid gray;
+    border-radius: 100%;
+    border-top-color: transparent;
+    animation: rotate infinite 0.5s linear;
+}
+
+@media (max-width: 865px) {
+    .report-open {
+        width: 100vw !important;
+    }
+}
+

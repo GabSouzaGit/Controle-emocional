@@ -43,7 +43,7 @@ clearAllButton.addEventListener('click', clearAllMemory);
 exportButton.addEventListener('click', exportData);
 importButton.addEventListener('click', importData);
 
-aiRelatoryButton.addEventListener('click', tryGetRelatory);
-relatoryWindowCloseButton.addEventListener('click', closeRelatoryWindow);
-relatoryWindowOpenButton.addEventListener('click', openRelatoryWindow);
+aiReportButton.addEventListener('click', tryGetReport);
+reportWindowCloseButton.addEventListener('click', closeReportWindow);
+reportWindowOpenButton.addEventListener('click', openReportWindow);
 
